@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Add Site";
+}
+@model Website
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="AddWebsite">
+    <div>
+        <label asp-for="Name">Name:</label>
+        <input asp-for="Name" type="text" />
+
+        <label asp-for="Url">URL:</label>
+        <input asp-for="Url" type="text" />
+
+        <label asp-for="Interval">Interval (seconds):</label>
+        <input asp-for="Interval" type="number" min="0" max="86400" />
+
+        <label asp-for="Threshold">Threshold (%):</label>
+        <input asp-for="Threshold" type="number" min="0" max="100" />
+
+        <button asp-action="Add">Add</button>
+    </div>
+</form>
